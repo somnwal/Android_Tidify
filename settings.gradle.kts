@@ -34,5 +34,6 @@ include(
 
 include(
     ":feature:main",
+    ":feature:mindmap",
     ":feature:test"
 )

@@ -5,12 +5,10 @@ plugins {
 }
 
 android {
-    setNamespace("feature.main")
+    setNamespace("feature.mindmap")
 }
 
 dependencies {
-    implementation(projects.feature.mindmap)
-
     implementation(projects.core.dataApi)
 
     implementation(libs.androidx.core.ktx)

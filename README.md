@@ -1,6 +1,6 @@
-# Android BudgetMap
+# Android Tidify
 
-자산 관리 앱
+생각 정리 앱
 
 ### 프로젝트 구조
 

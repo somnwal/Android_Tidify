@@ -13,9 +13,13 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -35,13 +39,11 @@ import androidx.navigation.compose.NavHost
 import com.somnwal.app.feature.main.ui.navigation.MainNavigator
 import com.somnwal.app.feature.main.ui.navigation.MainTab
 import com.somnwal.app.feature.main.ui.navigation.rememberMainNavigator
-import com.somnwal.app.core.designsystem.component.AppIcons
-import com.somnwal.app.feature.test.navigation.testNavGraph
+import com.somnwal.app.feature.mindmap.navigation.mindMapNavGraph
 import com.somnwal.budgetmap.feature.main.R
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun MainScreen(
     navigator: MainNavigator = rememberMainNavigator(),
@@ -89,7 +91,7 @@ internal fun MainScreen(
                 ) {
 
                     // 테스트 화면 네비게이션 그래프
-                    testNavGraph(
+                    mindMapNavGraph(
                         padding = padding,
                         onShowErrorSnackbar = onShowErrorSnackBar
                     )
@@ -120,7 +122,25 @@ private fun MainTopBar(
         exit = fadeOut() + slideOut { IntOffset(0, it.height) }
     ) {
         TopAppBar(
-            title = title
+            title = title,
+            navigationIcon = {
+                IconButton(
+                    onClick = {
+
+                    }
+                ) {
+                    Icon(Icons.Default.Person, contentDescription = "프로필")
+                }
+            },
+            actions = {
+                IconButton(
+                    onClick = {
+
+                    }
+                ) {
+                    Icon(Icons.Default.Add, contentDescription = "작성하기")
+                }
+            }
         )
     }
 }
