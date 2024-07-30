@@ -7,11 +7,13 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideIn
 import androidx.compose.animation.slideOut
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -32,6 +34,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
@@ -162,17 +165,13 @@ private fun MainBottomBar(
                 .fillMaxWidth()
                 .wrapContentHeight()
         ) {
-            HorizontalDivider(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentHeight(),
-                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f),
-                thickness = 1.dp
-            )
 
             NavigationBar(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(
+                        horizontal = 20.dp
+                    )
             ) {
                 tabs.forEach { tab ->
                     MainBottomBarItem(

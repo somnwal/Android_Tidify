@@ -1,7 +1,7 @@
 package com.somnwal.app.feature.main.ui.navigation
 
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.somnwal.app.core.designsystem.component.AppIcons
+import com.somnwal.app.core.designsystem.component.common.AppIcons
 import com.somnwal.app.feature.mindmap.navigation.MindMapRoute
 
 internal enum class MainTab(

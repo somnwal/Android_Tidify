@@ -17,7 +17,7 @@ dependencyResolutionManagement {
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "BudgetMap"
+rootProject.name = "Tidify"
 include(":app")
 
 
