@@ -7,7 +7,6 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideIn
 import androidx.compose.animation.slideOut
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.RowScope
@@ -19,7 +18,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -34,7 +32,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
@@ -42,7 +39,7 @@ import androidx.navigation.compose.NavHost
 import com.somnwal.app.feature.main.ui.navigation.MainNavigator
 import com.somnwal.app.feature.main.ui.navigation.MainTab
 import com.somnwal.app.feature.main.ui.navigation.rememberMainNavigator
-import com.somnwal.app.feature.mindmap.navigation.mindMapNavGraph
+import com.somnwal.app.feature.working.navigation.workingNavGraph
 import com.somnwal.budgetmap.feature.main.R
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.launch
@@ -94,7 +91,7 @@ internal fun MainScreen(
                 ) {
 
                     // 테스트 화면 네비게이션 그래프
-                    mindMapNavGraph(
+                    workingNavGraph(
                         padding = padding,
                         onShowErrorSnackbar = onShowErrorSnackBar
                     )

@@ -16,7 +16,7 @@
           </compositeBuild>
         </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -33,8 +33,8 @@
             <option value="$PROJECT_DIR$/core/room" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/main" />
-            <option value="$PROJECT_DIR$/feature/mindmap" />
             <option value="$PROJECT_DIR$/feature/test" />
+            <option value="$PROJECT_DIR$/feature/working" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

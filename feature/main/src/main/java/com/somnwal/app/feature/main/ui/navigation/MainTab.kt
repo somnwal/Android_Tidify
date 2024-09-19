@@ -2,7 +2,7 @@ package com.somnwal.app.feature.main.ui.navigation
 
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.somnwal.app.core.designsystem.component.common.AppIcons
-import com.somnwal.app.feature.mindmap.navigation.MindMapRoute
+import com.somnwal.app.feature.working.navigation.WorkingRoute
 
 internal enum class MainTab(
     val route: String,
@@ -10,9 +10,9 @@ internal enum class MainTab(
     val unselectedIcon: ImageVector,
     val selectedIcon: ImageVector
 ) {
-    MindMap(
-        route = MindMapRoute.ROUTE,
-        contentDescription = "마인드맵",
+    Working(
+        route = WorkingRoute.ROUTE,
+        contentDescription = "작업",
         unselectedIcon = AppIcons.ICON_TEST_OUTLINED,
         selectedIcon = AppIcons.ICON_TEST_FILLED
     );

@@ -58,6 +58,7 @@ espressoCore = "3.5.1"
 appcompat = "1.6.1"
 material = "1.12.0"
 uiTooling = "1.6.7"
+uiGeometryAndroid = "1.6.8"
 
 # ==================================================================================================
 # 라이브러리 정의 ======================================================================================
@@ -139,6 +140,7 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 junit-ext = { group = "androidx.test.ext", name = "junit", version.ref = "junitExt" }
 espresso-core = { group ="androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-ui-geometry-android = { group = "androidx.compose.ui", name = "ui-geometry-android", version.ref = "uiGeometryAndroid" }
 
 
 # ==================================================================================================

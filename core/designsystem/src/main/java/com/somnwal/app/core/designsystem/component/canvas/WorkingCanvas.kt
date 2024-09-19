@@ -6,7 +6,6 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.detectTransformGestures
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -27,6 +26,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
+import com.somnwal.app.core.designsystem.component.canvas.data.Arrow
+import com.somnwal.app.core.designsystem.component.canvas.data.Node
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -36,17 +37,10 @@ import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
 
-data class Node(
-    val id: Int,
-    var position: Offset,
-    var scale: Float = 0f,
-    var content: String = "New Node"
-)
-
-data class Arrow(val start: Node, val end: Node)
 
 @Composable
 fun WorkingCanvas() {
+    // 노드를 정의
     var nodes by remember { mutableStateOf(listOf<Node>()) }
     var arrows by remember { mutableStateOf(listOf<Arrow>()) }
     var nextNodeId by remember { mutableIntStateOf(0) }
@@ -64,6 +58,7 @@ fun WorkingCanvas() {
 
     val coroutineScope = rememberCoroutineScope()
 
+    // 노드 실시간 움직임 설정
     LaunchedEffect(nodes) {
         launch {
             while(true) {
@@ -79,6 +74,7 @@ fun WorkingCanvas() {
             }
         }
     }
+
     Canvas(
         modifier = Modifier
             .fillMaxSize()

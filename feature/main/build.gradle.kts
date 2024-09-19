@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-    implementation(projects.feature.mindmap)
+    implementation(projects.feature.working)
 
     implementation(projects.core.dataApi)
 

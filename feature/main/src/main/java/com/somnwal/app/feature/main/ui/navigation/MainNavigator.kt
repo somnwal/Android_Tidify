@@ -8,17 +8,20 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import com.somnwal.app.feature.mindmap.navigation.navigateToMindMap
+import com.somnwal.app.feature.working.navigation.navigateToWorking
 
 internal class MainNavigator(
     val navController: NavHostController
 ) {
+    private val showAsFullScreenList = listOf(
+        MainTab.Working.route
+    )
 
     private val currentDestination: NavDestination?
         @Composable get() = navController
             .currentBackStackEntryAsState().value?.destination
 
-    val startDestination = MainTab.MindMap.route
+    val startDestination = MainTab.Working.route
 
     val currentTab: MainTab?
         @Composable get() = currentDestination
@@ -37,7 +40,7 @@ internal class MainNavigator(
         }
 
         when(tab) {
-            MainTab.MindMap -> navController.navigateToMindMap(navOptions)
+            MainTab.Working -> navController.navigateToWorking(navOptions)
         }
     }
 
@@ -48,13 +51,13 @@ internal class MainNavigator(
     @Composable
     fun shouldShowAppBar(): Boolean {
         val currentRoute = currentDestination?.route ?: return false
-        return currentRoute in MainTab
+        return currentRoute !in showAsFullScreenList
     }
 
     @Composable
     fun shouldShowBottomBar(): Boolean {
         val currentRoute = currentDestination?.route ?: return false
-        return currentRoute in MainTab
+        return currentRoute !in showAsFullScreenList
     }
 }
 
